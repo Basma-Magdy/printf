@@ -5,13 +5,11 @@
  * Return: number of characters printed
  */
 int print_i(va_list val)
-{ 
-        int n = va_arg(val, int);
+{       int n = va_arg(val, int);
 	int num, m = n % 10, digit, exp = 1;
-	int  i = 1;
-        n = n / 10;
-	num = n;
-
+	int i = 1;
+		n = n / 10;
+		num = n;
 	if (m < 0)
 	{
 		_putchar('-');

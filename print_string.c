@@ -15,7 +15,7 @@ str = va_arg(input, char *);
 if (str == NULL)
 str = "(null)";
 
-len = strlen(str);
+len = _strlen(str);
 
 for (i = 0; i < len; i++)
 {

@@ -12,5 +12,6 @@ int print_char(va_list ptr);
 int print_string(va_list ptr);
 int print_int(va_list ptr);
 int print_percent(void);
+int print_binary(va_list in);
 
 #endif

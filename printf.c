@@ -29,6 +29,9 @@ switch (form[i])
 	case '%':
 		length = print_percent();
 		break;
+	case 'b':
+		length = print_binary(p);
+		break;
 	default:
 		print_percent();
 		_putchar(form[i]);

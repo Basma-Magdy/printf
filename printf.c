@@ -17,13 +17,14 @@ va_start (ptr, format);
 
 for (i = 0; format[i] != '\0'; i++)
 {
-	while (format[i] != '%')
+	if (format[i] != '%')
 	{
 		_putchar(format[i]);
-		i++;
 	}
-	i++;
 
+	else
+	{
+	i++;
 	switch (format[i])
 	{
 	case 'c': len += print_char(ptr);
@@ -36,6 +37,7 @@ for (i = 0; format[i] != '\0'; i++)
 			break;
 	case '%': len += print_percent();
 			break;
+	}
 	}
 }
 

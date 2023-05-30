@@ -10,7 +10,7 @@ va_list ptr;
 int i, len;
 len = 0;
 
-if (format == NULL)/* || (format[0] == '%' && format[1] == '\0'))*/
+if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 
 va_start (ptr, format);

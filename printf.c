@@ -21,10 +21,10 @@ switch (form[i])
 		length = print_string(p);
 		break;
 	case 'd':
-		length = print_int(p);
+		length = print_dec(p);
 		break;
 	case 'i':
-		length = print_int(p);
+		length = print_i(p);
 		break;
 	case '%':
 		length = print_percent();

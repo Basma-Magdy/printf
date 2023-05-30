@@ -29,12 +29,12 @@ for (i = 0; format[i] != '\0'; i++)
 	{
 	case 'c': len += print_char(ptr);
 			break; 
-	/*case 's': len += print_string(ptr);
+	case 's': len += print_string(ptr);
 			break;
 	case 'd': len += print_int(ptr);
 			break;
 	case 'i': len += print_int(ptr);
-			break;*/
+			break;
 	case '%': len += print_percent();
 			break;
 	}

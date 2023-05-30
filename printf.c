@@ -1,9 +1,47 @@
 #include "main.h"
 /**
+* select_specifier - to selected requested specifier
+* @p: pointer to arguments
+* @i: iterated index
+* @form: pointer to input format
+*/
+
+int select_specifier(va_list p, int i, const char *form)
+{
+int length;
+length = 0;
+
+switch (form[i])
+{
+	case 'c':
+		length = print_char(p);
+		break;
+	case 's':
+		length = print_string(p);
+		break;
+	case 'd':
+		length = print_int(p);
+		break;
+	case 'i':
+		length = print_int(p);
+		break;
+	case '%':
+		length = print_percent();
+		break;
+	default:
+		print_percent();
+		_putchar(form[i]);
+}
+
+return (length);
+}
+
+/**
 * _printf - A function that produces output according to a format
 * Return: number of printed bytes or (-1) if error occurs
 * @format: constant pointer to a character string
 */
+
 int _printf(const char *format, ...)
 {
 va_list ptr;
@@ -13,7 +51,7 @@ len = 0;
 if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 
-va_start (ptr, format);
+va_start(ptr, format);
 
 for (i = 0; format[i] != '\0'; i++)
 {
@@ -21,25 +59,10 @@ for (i = 0; format[i] != '\0'; i++)
 	{
 		_putchar(format[i]);
 	}
-
 	else
 	{
-	i++;
-	switch (format[i])
-	{
-	case 'c': len += print_char(ptr);
-			break; 
-	case 's': len += print_string(ptr);
-			break;
-	case 'd': len += print_int(ptr);
-			break;
-	case 'i': len += print_int(ptr);
-			break;
-	case '%': len += print_percent();
-			break;
-	default: print_percent();
-		 _putchar(format[i]);
-	}
+		i++;
+		len += select_specifier(ptr, i, format);
 	}
 }
 len += i - 2;

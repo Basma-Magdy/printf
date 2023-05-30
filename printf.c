@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 va_list ptr;
 int i, len;
 
-if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+if (format == NULL)/* || (format[0] == '%' && format[1] == '\0'))*/
 return (-1);
 
 va_start (ptr, format);

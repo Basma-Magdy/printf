@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 va_list ptr;
 int i, len;
 
-if (format == NULL /* || (format[0] == '%' && format[1] == '\0')*/)
+if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 
 va_start (ptr, format);
@@ -23,8 +23,8 @@ for (i = 0; format[i] != '\0'; i++)
 
 	else
 	{
-
-	len = ++i;
+	i++;
+	len = i;
 	switch (format[i])
 	{
 	case 'c': len += print_char(ptr);

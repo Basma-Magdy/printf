@@ -4,6 +4,7 @@
 * @p: pointer to arguments
 * @i: iterated index
 * @form: pointer to input format
+* Return: the length of input data as integer value
 */
 
 int select_specifier(va_list p, int i, const char *form)

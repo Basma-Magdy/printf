@@ -68,6 +68,5 @@ for (i = 0; format[i] != '\0'; i++)
 }
 len += i - 2;
 va_end(ptr);
-printf("\n");
 return (len);
 }

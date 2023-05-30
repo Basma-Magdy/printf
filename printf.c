@@ -8,6 +8,7 @@ int _printf(const char *format, ...)
 {
 va_list ptr;
 int i, len;
+len = 0;
 
 if (format == NULL)/* || (format[0] == '%' && format[1] == '\0'))*/
 return (-1);
@@ -24,7 +25,6 @@ for (i = 0; format[i] != '\0'; i++)
 	else
 	{
 	i++;
-	len = i;
 	switch (format[i])
 	{
 	case 'c': len += print_char(ptr);
@@ -42,7 +42,7 @@ for (i = 0; format[i] != '\0'; i++)
 	}
 	}
 }
-len++;
+len += i - 2;
 va_end(ptr);
 return (len);
 }

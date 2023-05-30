@@ -37,6 +37,8 @@ for (i = 0; format[i] != '\0'; i++)
 			break;
 	case '%': len += print_percent();
 			break;
+	default: print_percent();
+		 _putchar(format[i]);
 	}
 	}
 }

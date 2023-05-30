@@ -7,10 +7,9 @@
 int _printf(const char *format, ...)
 {
 va_list ptr;
-int i, r;
-r = 0;
+int i, len;
 
-if (format == NULL)
+if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 
 va_start (ptr, format);
@@ -24,25 +23,26 @@ for (i = 0; format[i] != '\0'; i++)
 
 	else
 	{
-	i++;
+
+	len = ++i;
 	switch (format[i])
 	{
-	case 'c': r += print_char(ptr);
+	case 'c': len += print_char(ptr);
 			break; 
-	case 's': r += print_string(ptr);
+	case 's': len += print_string(ptr);
 			break;
-	case 'd': r += print_int(ptr);
+	case 'd': len += print_int(ptr);
 			break;
-	case 'i': r += print_int(ptr);
+	case 'i': len += print_int(ptr);
 			break;
-	case '%': r += print_percent();
+	case '%': len += print_percent();
 			break;
 	default: print_percent();
 		 _putchar(format[i]);
 	}
 	}
 }
-
+len++;
 va_end(ptr);
-return (i - 1);
+return (len);
 }

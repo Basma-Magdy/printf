@@ -38,6 +38,9 @@ switch (form[i])
 	case 'o':
                 length = print_oct(p);
                 break;
+	case 'u':
+                length = print_unsigned(p);
+                break;
 	default:
 		print_percent();
 		_putchar(form[i]);

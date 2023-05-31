@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int print_oct(va_list ptr);
+int print_hex(va_list ptr);
 int _strlen(char *s);
 int _printf(const char *format, ...);
 int _putchar(char c);

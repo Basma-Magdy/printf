@@ -32,6 +32,12 @@ switch (form[i])
 	case 'b':
 		length = print_binary(p);
 		break;
+	case 'x':
+		length = print_hex(p);
+		break;
+	case 'o':
+                length = print_oct(p);
+                break;
 	default:
 		print_percent();
 		_putchar(form[i]);

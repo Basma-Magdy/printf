@@ -2,7 +2,7 @@
 /**
 * _strlen - string length
 * @s: input string
-* Return:: integer length
+* Return: integer length
 */
 int _strlen(char *s)
 {
@@ -11,8 +11,8 @@ len = 0;
 
 for (i = 0; s[i] != '\0'; i++)
 {
-	len ++;
+len ++;
 }
-
 return (len);
 }
+

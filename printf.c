@@ -21,10 +21,10 @@ switch (form[i])
 		length = print_string(p);
 		break;
 	case 'd':
-		length = print_int(p);
+		length = print_dec(p);
 		break;
 	case 'i':
-		length = print_int(p);
+		length = print_i(p);
 		break;
 	case '%':
 		length = print_percent();
@@ -32,6 +32,15 @@ switch (form[i])
 	case 'b':
 		length = print_binary(p);
 		break;
+	case 'x':
+		length = print_hex(p);
+		break;
+	case 'o':
+                length = print_oct(p);
+                break;
+	case 'u':
+                length = print_unsigned(p);
+                break;
 	default:
 		print_percent();
 		_putchar(form[i]);
